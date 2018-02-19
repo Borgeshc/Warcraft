@@ -32,5 +32,11 @@ public class ActionButton : MonoBehaviour
     public void SetIconImage(Sprite image)
     {
         icon.sprite = image;
+        icon.enabled = true;
+    }
+
+    public void DisableIconImage()
+    {
+        icon.enabled = false;
     }
 }
