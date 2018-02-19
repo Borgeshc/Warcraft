@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a38208c991e044fa1ab0952845c123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionButtonNumber: 1
   icon: {fileID: 114411748780388910}
   keybind: 49
 --- !u!222 &222474530936885478

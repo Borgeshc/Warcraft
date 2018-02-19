@@ -5,27 +5,28 @@ using UnityEngine.UI;
 
 public class ActionButton : MonoBehaviour
 {
+    public int actionButtonNumber;
     public Image icon;
     public KeyCode keybind;
 
-    InputManager inputManager;
+    AbilityLoadout abilityLoadout;
 
     private void Start()
     {
-        inputManager = GameObject.Find("Player").GetComponent<InputManager>();
+        abilityLoadout = GameObject.Find("Player").GetComponent<AbilityLoadout>();
     }
 
     void Update ()
     {
 	    if(Input.GetKeyDown(keybind))
         {
-            inputManager.ActionButtonPressed();
+            abilityLoadout.ActionButtonPressed(actionButtonNumber);
         }
 	}
 
     public void ActionButtonPressed()
     {
-        inputManager.ActionButtonPressed();
+        abilityLoadout.ActionButtonPressed(actionButtonNumber);
     }
 
     public void SetIconImage(Sprite image)
