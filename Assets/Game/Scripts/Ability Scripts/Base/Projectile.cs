@@ -8,12 +8,18 @@ public class Projectile : MonoBehaviour
 
     Transform target;
     int damage;
+    int criticalStrikeChance;
+    float criticalStrikeDamage;
     float smoothTime;
+    NamePlate enemyNamePlate;
 
-    public void SetProjectileValues(Transform _target, int _damage)
+    public void SetProjectileValues(Transform _target, int _damage, int _criticalStrikeChance, float _criticalStrikeDamage, NamePlate _enemyNamePlate)
     {
         target = _target;
         damage = _damage;
+        criticalStrikeChance = _criticalStrikeChance;
+        criticalStrikeDamage = _criticalStrikeDamage;
+        enemyNamePlate = _enemyNamePlate;
     }
 
     private void Update()
@@ -29,7 +35,7 @@ public class Projectile : MonoBehaviour
     {
         if(other.tag.Equals("Enemy"))
         {
-            //other.GetComponent<Health>().TookDamage(damage);
+            other.GetComponent<Health>().TookDamage(damage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate);
             Destroy(gameObject);
         }
     }

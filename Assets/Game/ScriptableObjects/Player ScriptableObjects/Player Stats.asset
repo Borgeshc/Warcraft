@@ -14,3 +14,6 @@ MonoBehaviour:
   level: 1
   health: 100
   resource: 100
+  damage: 3
+  criticalStrikeChance: 15
+  criticalStrikeDamage: 1.2

@@ -13,14 +13,17 @@ public class NamePlate : MonoBehaviour
     public Image entityResourceBar;
     public Text entityResource;
 
-    int maxHealth;
-    int currentHealth;
+    float maxHealth;
+    float currentHealth;
 
-    int maxResource;
-    int currentResource;
+    float maxResource;
+    float currentResource;
 
     public void SetUpNamePlate(string _entityName, Sprite _entityImage, int _entityLevel, int _entityHealth, int _entityResource)
     {
+        maxHealth = _entityHealth;
+        maxResource = _entityResource;
+
         entityName.text = _entityName;
         entityImage.sprite = _entityImage;
         entityLevel.text = _entityLevel.ToString();
@@ -33,8 +36,13 @@ public class NamePlate : MonoBehaviour
     public void UpdateHealth(int newHealth)
     {
         currentHealth = newHealth;
-        entityHealthBar.fillAmount = currentHealth;
+        entityHealthBar.fillAmount = (currentHealth / maxHealth);
         entityHealth.text = currentHealth + " / " + maxHealth;
+
+        print("New Health: " + currentHealth);
+
+        print("Max Health: " + maxHealth);
+        print("Health Percent: " + (currentHealth / maxHealth));
     }
 
     public void UpdateMaxHealth(int newHealth)
@@ -46,7 +54,7 @@ public class NamePlate : MonoBehaviour
     public void UpdateResource(int newResource)
     {
         currentResource = newResource;
-        entityResourceBar.fillAmount = currentResource;
+        entityResourceBar.fillAmount = currentResource / maxResource;
         entityResource.text = currentResource + " / " + maxResource;
     }
 

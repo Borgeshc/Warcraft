@@ -9,4 +9,6 @@ public class Stats : ScriptableObject
     public int health;
     public int resource;
     public int damage;
+    public int criticalStrikeChance;
+    public float criticalStrikeDamage;
 }
