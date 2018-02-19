@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Name: Enemy Stats
   m_EditorClassIdentifier: 
   level: 1
-  health: 15
+  health: 25
   resource: 0
+  autoAttackMinDamage: 0
+  autoAttackMaxDamage: 0
+  criticalStrikeChance: 0
+  criticalStrikeDamage: 0

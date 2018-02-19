@@ -5,20 +5,35 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed = 5f;
+    
+    public enum Status
+    {
+        None,
+        Dot,
+        Slow
+    };
+
+    public Status statusEffect;
 
     Transform target;
-    int damage;
+    int minimumDamage;
+    int maximumDamage;
     int criticalStrikeChance;
     float criticalStrikeDamage;
-    float smoothTime;
+    float statusLength;
     NamePlate enemyNamePlate;
 
-    public void SetProjectileValues(Transform _target, int _damage, int _criticalStrikeChance, float _criticalStrikeDamage, NamePlate _enemyNamePlate)
+
+    float smoothTime;
+
+    public void SetProjectileValues(Transform _target, int _minimumDamage, int _maximumDamage, int _criticalStrikeChance, float _criticalStrikeDamage, float _statusLength, NamePlate _enemyNamePlate)
     {
         target = _target;
-        damage = _damage;
+        minimumDamage = _minimumDamage;
+        maximumDamage = _maximumDamage;
         criticalStrikeChance = _criticalStrikeChance;
         criticalStrikeDamage = _criticalStrikeDamage;
+        statusLength = _statusLength;
         enemyNamePlate = _enemyNamePlate;
     }
 
@@ -35,7 +50,20 @@ public class Projectile : MonoBehaviour
     {
         if(other.tag.Equals("Enemy"))
         {
-            other.GetComponent<Health>().TookDamage(damage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate);
+            switch(statusEffect)
+            {
+                case Status.None:
+                    int randomDamage = Random.Range(minimumDamage, maximumDamage);
+                    other.GetComponent<Health>().TookDamage(randomDamage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate);
+                    break;
+                case Status.Dot:
+                    other.GetComponent<StatusEffects>().Dot(minimumDamage, maximumDamage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate, statusLength);
+                    break;
+                case Status.Slow:
+                    other.GetComponent<StatusEffects>().Slow(statusLength);
+                    break;
+            }
+
             Destroy(gameObject);
         }
     }

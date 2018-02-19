@@ -10,10 +10,11 @@ public class Health : MonoBehaviour
     public GameObject combatText;
     public GameObject criticalCombatText;
 
-    int health;
+    [HideInInspector]
+    public int health;
     bool isDead;
 
-    private void Start()
+    private void Awake()
     {
         ResetHealth();
     }
@@ -37,11 +38,13 @@ public class Health : MonoBehaviour
             cbt.GetComponent<Text>().text = damage.ToString();
         }
 
-        enemyNamePlate.UpdateHealth(health);
+        if(Target.target == gameObject)
+            enemyNamePlate.UpdateHealth(health);
 
         if(health <= 0 && !isDead)
         {
             isDead = true;
+            enemyNamePlate.DisableNamePlate();
             Destroy(gameObject);
         }
     }

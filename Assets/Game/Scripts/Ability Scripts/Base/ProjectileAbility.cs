@@ -7,6 +7,9 @@ public class ProjectileAbility : Ability
     public GameObject projectile;
     public GameObject spawnPosition;
     public NamePlate enemyNamePlate;
+    public int minimumDamage;
+    public int maximumDamage;
+    public float statusLength;
     public Stats stats;
 
     public bool requiresTarget;
@@ -18,7 +21,7 @@ public class ProjectileAbility : Ability
         if(!OnGlobalCooldown() && !OnCooldown())
         {
             GameObject newProjectile = Instantiate(projectile, spawnPosition.transform.position, spawnPosition.transform.rotation);
-            newProjectile.GetComponent<Projectile>().SetProjectileValues(Target.target.transform, stats.damage, stats.criticalStrikeChance, stats.criticalStrikeDamage, enemyNamePlate);
+            newProjectile.GetComponent<Projectile>().SetProjectileValues(Target.target.transform, minimumDamage, maximumDamage, stats.criticalStrikeChance, stats.criticalStrikeDamage, statusLength, enemyNamePlate);
             TriggerCooldown();
         }
     }

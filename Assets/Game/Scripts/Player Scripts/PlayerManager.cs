@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         playerEntity = GetComponent<Entity>();
+        playerNamePlate.SetUpBaseValues(playerEntity.stats.health, playerEntity.stats.resource);    //This needs to be changed with real health value and resource value
         playerNamePlate.SetUpNamePlate(playerEntity.entityName, playerEntity.entityImage, playerEntity.stats.level, playerEntity.stats.health, playerEntity.stats.resource);
     }
 

@@ -14,54 +14,39 @@ public class NamePlate : MonoBehaviour
     public Text entityResource;
 
     float maxHealth;
-    float currentHealth;
-
     float maxResource;
-    float currentResource;
+
+    public void SetUpBaseValues(float _maxHealth, float _maxResource)
+    {
+        maxHealth = _maxHealth;
+        maxResource = _maxResource;
+    }
 
     public void SetUpNamePlate(string _entityName, Sprite _entityImage, int _entityLevel, int _entityHealth, int _entityResource)
     {
-        maxHealth = _entityHealth;
-        maxResource = _entityResource;
-
         entityName.text = _entityName;
         entityImage.sprite = _entityImage;
         entityLevel.text = _entityLevel.ToString();
         entityHealthBar.fillAmount = _entityHealth;
-        entityHealth.text = _entityHealth + " / " + _entityHealth;
+        entityHealth.text = _entityHealth + " / " + maxHealth;
         entityResourceBar.fillAmount = _entityResource;
-        entityResource.text = _entityResource + " / " + _entityResource;
+        entityResource.text = _entityResource + " / " + maxResource;
+    }
+
+    public void DisableNamePlate()
+    {
+        gameObject.SetActive(false);
     }
 
     public void UpdateHealth(int newHealth)
     {
-        currentHealth = newHealth;
-        entityHealthBar.fillAmount = (currentHealth / maxHealth);
-        entityHealth.text = currentHealth + " / " + maxHealth;
-
-        print("New Health: " + currentHealth);
-
-        print("Max Health: " + maxHealth);
-        print("Health Percent: " + (currentHealth / maxHealth));
-    }
-
-    public void UpdateMaxHealth(int newHealth)
-    {
-        maxHealth = newHealth;
-        entityHealth.text = currentHealth + " / " + maxHealth;
+        entityHealthBar.fillAmount = (newHealth / maxHealth);
+        entityHealth.text = newHealth + " / " + maxHealth;
     }
 
     public void UpdateResource(int newResource)
     {
-        currentResource = newResource;
-        entityResourceBar.fillAmount = currentResource / maxResource;
-        entityResource.text = currentResource + " / " + maxResource;
+        entityResourceBar.fillAmount = newResource / maxResource;
+        entityResource.text = newResource + " / " + maxResource;
     }
-
-    public void UpdateMaxResource(int newResource)
-    {
-        maxResource = newResource;
-        entityResource.text = currentResource + " / " + maxResource;
-    }
-
 }
