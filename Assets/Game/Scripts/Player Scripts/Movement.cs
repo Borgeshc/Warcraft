@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float baseSpeed = 1;
-    public float rotationSpeed = 100;
+    public float baseSpeed = 10f;
+    public float rotationSpeed = 200f;
+    public float rotationAdjustSpeed = 100f;
 
     float speed;
 
@@ -24,7 +25,7 @@ public class Movement : MonoBehaviour
         speed = baseSpeed;
 	}
 	
-	void Update ()
+	void FixedUpdate ()
     {
         rightClick = Input.GetKey(KeyCode.Mouse1);
         leftClick = Input.GetKey(KeyCode.Mouse0);
@@ -34,21 +35,16 @@ public class Movement : MonoBehaviour
         strafe = Input.GetAxis("Strafe");
 
         if(rightClick)
-        {
             transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
-        }
         else
-        {
-            transform.Rotate(Vector3.up * horizontal * rotationSpeed * Time.deltaTime);
-        }
+            transform.Rotate(Vector3.up * horizontal * rotationSpeed * Time.fixedDeltaTime);
 
         if (leftClick && rightClick)
-            movement = new Vector3(strafe, 0, 1);
+            movement = new Vector3(strafe, 0, 1).normalized;
         else
-            movement = new Vector3(strafe, 0, vertical);
+            movement = new Vector3(strafe, 0, vertical).normalized;
 
-        movement *= speed * Time.deltaTime;
-        movement.Normalize();
+        movement *= speed * Time.fixedDeltaTime;
         movement = Camera.main.transform.TransformDirection(movement);
         movement.y = 0f;
 
@@ -56,6 +52,6 @@ public class Movement : MonoBehaviour
 
 
         if (vertical > 0)
-            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
+            transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z), rotationAdjustSpeed * Time.fixedDeltaTime);
     }
 }
