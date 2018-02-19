@@ -5,6 +5,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public LayerMask targetable;
+    public static GameObject target;
 
     PlayerManager playerManager;
 
@@ -21,11 +22,13 @@ public class Target : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray, out hit, 100, targetable))
             {
+                target = hit.transform.gameObject;
                 hit.transform.GetComponent<Targetable>().Target();
             }
             else
             {
                 playerManager.DisableEnemyNamePlate();
+                target = null;
             }
         }
     }
