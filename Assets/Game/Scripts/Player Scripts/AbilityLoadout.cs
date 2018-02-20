@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AbilityLoadout : MonoBehaviour
 {
+    #region Ability Loadout
     [Header("Ability Loadout"), Space]
     public ActionButton actionButton1;
     public Ability actionButton1Ability;
@@ -41,21 +42,131 @@ public class AbilityLoadout : MonoBehaviour
     [Space]
     public ActionButton actionButton12;
     public Ability actionButton12Ability;
+    #endregion
 
     [Space, Header("Action Bar Variables")]
     public float globalCooldown;
     public GameObject targetRequiredText;
 
+    public static List<Ability> abilities;
+
     bool requiringTarget;
 
     private void Start()
     {
+        abilities = new List<Ability>(12);
+        SetUpAbilities();
         UpdateIcons();
     }
+    #region SetUpAbilities()
+    public void SetUpAbilities()
+    {
+        if (actionButton1Ability)
+            abilities.Add(actionButton1Ability);
 
+        if (actionButton2Ability)
+            abilities.Add(actionButton2Ability);
+
+        if (actionButton3Ability)
+            abilities.Add(actionButton3Ability);
+
+        if (actionButton4Ability)
+            abilities.Add(actionButton4Ability);
+
+        if (actionButton5Ability)
+            abilities.Add(actionButton5Ability);
+
+        if (actionButton6Ability)
+            abilities.Add(actionButton6Ability);
+
+        if (actionButton7Ability)
+            abilities.Add(actionButton7Ability);
+
+        if (actionButton8Ability)
+            abilities.Add(actionButton8Ability);
+
+        if (actionButton9Ability)
+            abilities.Add(actionButton9Ability);
+
+        if (actionButton10Ability)
+            abilities.Add(actionButton10Ability);
+
+        if (actionButton11Ability)
+            abilities.Add(actionButton11Ability);
+
+        if (actionButton12Ability)
+            abilities.Add(actionButton12Ability);
+    }
+    #endregion
+    #region UpdateAbilities()
+    public void UpdateAbilities()
+    {
+        if (actionButton1Ability)
+        {
+            abilities[0] = actionButton1Ability;
+        }
+
+        if (actionButton2Ability)
+        {
+            abilities[1] = actionButton2Ability;
+        }
+
+        if (actionButton3Ability)
+        {
+            abilities[2] = actionButton3Ability;
+        }
+
+        if (actionButton4Ability)
+        {
+            abilities[3] = actionButton4Ability;
+        }
+
+        if (actionButton5Ability)
+        {
+            abilities[4] = actionButton5Ability;
+        }
+
+        if (actionButton6Ability)
+        {
+            abilities[5] = actionButton6Ability;
+        }
+
+        if (actionButton7Ability)
+        {
+            abilities[6] = actionButton7Ability;
+        }
+
+        if (actionButton8Ability)
+        {
+            abilities[7] = actionButton8Ability;
+        }
+
+        if (actionButton9Ability)
+        {
+            abilities[8] = actionButton9Ability;
+        }
+
+        if (actionButton10Ability)
+        {
+            abilities[9] = actionButton10Ability;
+        }
+
+        if (actionButton11Ability)
+        {
+            abilities[10] = actionButton11Ability;
+        }
+
+        if (actionButton12Ability)
+        {
+            abilities[11] = actionButton12Ability;
+        }
+    }
+    #endregion
+    
     public void ActionButtonPressed(int button)
     {
-        switch(button)
+        #region Input
+        switch (button)
         {
             case 1:
                 if(actionButton1Ability)
@@ -250,8 +361,9 @@ public class AbilityLoadout : MonoBehaviour
                 }
                 break;
         }
-
-        if(actionButton1Ability)
+        #endregion
+        #region GlobalCooldown
+        if (actionButton1Ability)
         {
             if(!actionButton1Ability.OnCooldown() && !actionButton1.ShowingCooldown())
                 actionButton1.ShowCooldown(globalCooldown);
@@ -322,6 +434,7 @@ public class AbilityLoadout : MonoBehaviour
             if (!actionButton12Ability.OnCooldown() && !actionButton12.ShowingCooldown())
                 actionButton12.ShowCooldown(globalCooldown);
         }
+        #endregion
     }
 
     IEnumerator TargetRequired()
@@ -333,6 +446,7 @@ public class AbilityLoadout : MonoBehaviour
         requiringTarget = false;
     }
 
+    #region UpdateIcons
     public void UpdateIcons()
     {
         if (actionButton1Ability)
@@ -371,4 +485,5 @@ public class AbilityLoadout : MonoBehaviour
         if (actionButton12Ability)
             actionButton12.SetIconImage(actionButton12Ability.abilityIcon);
     }
+    #endregion
 }

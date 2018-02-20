@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  statusEffect: 0
+  currentEncahnt: 0
 --- !u!114 &114943077466069234
 MonoBehaviour:
   m_ObjectHideFlags: 1

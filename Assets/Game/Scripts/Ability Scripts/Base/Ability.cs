@@ -7,7 +7,18 @@ public class Ability : MonoBehaviour
     public string abilityName;
     public Sprite abilityIcon;
     public float abilityCooldown;
+    public float statusLength;
     public bool requiresTarget;
+
+    public enum Enchant
+    {
+        None,
+        Dot,
+        Slow
+    };
+
+    public Enchant enchant;
+    public Enchant currentEnchant;
 
     bool onCooldown;
     [HideInInspector]
@@ -16,6 +27,11 @@ public class Ability : MonoBehaviour
     public virtual void ActivateAbility()
     {
 
+    }
+
+    public void RemoveEnchant()
+    {
+        currentEnchant = Enchant.None;
     }
 
     public void TriggerCooldown()

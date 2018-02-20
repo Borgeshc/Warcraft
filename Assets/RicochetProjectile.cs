@@ -4,32 +4,12 @@ using UnityEngine;
 
 public class RicochetProjectile : Projectile
 {
-    public float speed = 5f;
-
-    public enum Status
-    {
-        None,
-        Dot,
-        Slow
-    };
-
-    public Status statusEffect;
-
-    Transform target;
-    int minimumDamage;
-    int maximumDamage;
-    int criticalStrikeChance;
-    float criticalStrikeDamage;
-    float statusLength;
-    NamePlate enemyNamePlate;
-
-    float smoothTime;
     float distFromTarget;
 
     int nearbyTargetIndex;
     int ricochetCounter;
 
-    public override void SetProjectileValues(Transform _target, int _minimumDamage, int _maximumDamage, int _criticalStrikeChance, float _criticalStrikeDamage, float _statusLength, NamePlate _enemyNamePlate)
+    public override void SetProjectileValues(Transform _target, int _minimumDamage, int _maximumDamage, int _criticalStrikeChance, float _criticalStrikeDamage, float _statusLength, NamePlate _enemyNamePlate, Ability.Enchant _enchant)
     {
         target = _target;
         minimumDamage = _minimumDamage;
@@ -38,6 +18,7 @@ public class RicochetProjectile : Projectile
         criticalStrikeDamage = _criticalStrikeDamage;
         statusLength = _statusLength;
         enemyNamePlate = _enemyNamePlate;
+        currentEnchant = _enchant;
     }
 
     private void Update()
@@ -83,15 +64,15 @@ public class RicochetProjectile : Projectile
     {
         if (other.tag.Equals("Enemy"))
         {
-            switch (statusEffect)
+            switch (currentEnchant)
             {
-                case Status.None:
+                case Ability.Enchant.None:
                     break;
-                case Status.Dot:
-                    other.GetComponent<StatusEffects>().Dot(minimumDamage, maximumDamage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate, statusLength);
+                case Ability.Enchant.Dot:
+                    other.GetComponent<EnchantEffects>().Dot(minimumDamage, maximumDamage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate, statusLength);
                     break;
-                case Status.Slow:
-                    other.GetComponent<StatusEffects>().Slow(statusLength);
+                case Ability.Enchant.Slow:
+                    other.GetComponent<EnchantEffects>().Slow(statusLength);
                     break;
             }
             

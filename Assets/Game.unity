@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 160957296}
   - component: {fileID: 160957297}
   m_Layer: 0
-  m_Name: Incinerating Shot
+  m_Name: Incinerating Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,21 +454,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 160957295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec0118c767548246ad7f19253e61884, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f075e8d8cdb65a4db0bade2a2b5bd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityName: Impact Shot
+  abilityName: Incinerating Arrow
   abilityIcon: {fileID: 21300000, guid: a91e4836e1f000947bb891361d060c99, type: 3}
   abilityCooldown: 5
-  requiresTarget: 1
+  statusLength: 5
+  requiresTarget: 0
+  enchant: 1
+  currentEnchant: 0
   globalCooldown: 0
-  projectile: {fileID: 1447570011435674, guid: b2d9bc47e906dc042822582bdf576a3b, type: 2}
-  spawnPosition: {fileID: 1162529485}
-  enemyNamePlate: {fileID: 342464656}
-  minimumDamage: 1
-  maximumDamage: 3
-  statusLength: 15
-  stats: {fileID: 11400000, guid: 4aabc09aa7500ef488ae42fd08e1401b, type: 2}
 --- !u!1 &182272190
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +842,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 263312117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -559.0993, z: 0}
+  m_LocalPosition: {x: 0, y: -560.4061, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 12613070}
@@ -967,14 +963,16 @@ MonoBehaviour:
   abilityName: Impact Shot
   abilityIcon: {fileID: 21300000, guid: a91e4836e1f000947bb891361d060c99, type: 3}
   abilityCooldown: 10
+  statusLength: 0
   requiresTarget: 1
+  enchant: 0
+  currentEnchant: 0
   globalCooldown: 0
   projectile: {fileID: 1447570011435674, guid: 7df96ddacbcc1c04d9ac4b94bb87b040, type: 2}
   spawnPosition: {fileID: 1162529485}
   enemyNamePlate: {fileID: 342464656}
   minimumDamage: 1
   maximumDamage: 3
-  statusLength: 5
   stats: {fileID: 11400000, guid: 4aabc09aa7500ef488ae42fd08e1401b, type: 2}
 --- !u!1 &295602666
 GameObject:
@@ -4833,8 +4831,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617686472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 488.5, y: 284.5, z: 0}
-  m_LocalScale: {x: 0.50885415, y: 0.50885415, z: 0.50885415}
+  m_LocalPosition: {x: 492.5, y: 287.5, z: 0}
+  m_LocalScale: {x: 0.5130208, y: 0.5130208, z: 0.5130208}
   m_Children:
   - {fileID: 263312118}
   - {fileID: 1526880828}
@@ -4983,14 +4981,16 @@ MonoBehaviour:
   abilityName: Impact Shot
   abilityIcon: {fileID: 21300000, guid: a91e4836e1f000947bb891361d060c99, type: 3}
   abilityCooldown: 1
+  statusLength: 0
   requiresTarget: 1
+  enchant: 0
+  currentEnchant: 0
   globalCooldown: 0
   projectile: {fileID: 1447570011435674, guid: e4e4ccfff824e0948ba6dde08c2035aa, type: 2}
   spawnPosition: {fileID: 1162529485}
   enemyNamePlate: {fileID: 342464656}
   minimumDamage: 2
   maximumDamage: 3
-  statusLength: 0
   stats: {fileID: 11400000, guid: 4aabc09aa7500ef488ae42fd08e1401b, type: 2}
 --- !u!4 &1647333396
 Transform:
@@ -5442,7 +5442,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1931445993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 309.0993, z: 0}
+  m_LocalPosition: {x: 0, y: 310.40613, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1617686476}

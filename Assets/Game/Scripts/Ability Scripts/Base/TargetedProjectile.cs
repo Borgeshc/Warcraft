@@ -4,28 +4,7 @@ using UnityEngine;
 
 public class TargetedProjectile : Projectile
 {
-    public float speed = 5f;
-    
-    public enum Status
-    {
-        None,
-        Dot,
-        Slow
-    };
-
-    public Status statusEffect;
-
-    Transform target;
-    int minimumDamage;
-    int maximumDamage;
-    int criticalStrikeChance;
-    float criticalStrikeDamage;
-    float statusLength;
-    NamePlate enemyNamePlate;
-
-    float smoothTime;
-
-    public override void SetProjectileValues(Transform _target, int _minimumDamage, int _maximumDamage, int _criticalStrikeChance, float _criticalStrikeDamage, float _statusLength, NamePlate _enemyNamePlate)
+    public override void SetProjectileValues(Transform _target, int _minimumDamage, int _maximumDamage, int _criticalStrikeChance, float _criticalStrikeDamage, float _statusLength, NamePlate _enemyNamePlate, Ability.Enchant _enchant)
     {
         target = _target;
         minimumDamage = _minimumDamage;
@@ -34,6 +13,7 @@ public class TargetedProjectile : Projectile
         criticalStrikeDamage = _criticalStrikeDamage;
         statusLength = _statusLength;
         enemyNamePlate = _enemyNamePlate;
+        currentEnchant = _enchant;
     }
 
     private void Update()
@@ -53,17 +33,18 @@ public class TargetedProjectile : Projectile
     {
         if(other.tag.Equals("Enemy"))
         {
-            switch(statusEffect)
+            int randomDamage = Random.Range(minimumDamage, maximumDamage);
+            other.GetComponent<Health>().TookDamage(randomDamage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate);
+
+            switch (currentEnchant)
             {
-                case Status.None:
-                    int randomDamage = Random.Range(minimumDamage, maximumDamage);
-                    other.GetComponent<Health>().TookDamage(randomDamage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate);
+                case Ability.Enchant.None:
                     break;
-                case Status.Dot:
-                    other.GetComponent<StatusEffects>().Dot(minimumDamage, maximumDamage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate, statusLength);
+                case Ability.Enchant.Dot:
+                    other.GetComponent<EnchantEffects>().Dot(minimumDamage, maximumDamage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate, statusLength);
                     break;
-                case Status.Slow:
-                    other.GetComponent<StatusEffects>().Slow(statusLength);
+                case Ability.Enchant.Slow:
+                    other.GetComponent<EnchantEffects>().Slow(statusLength);
                     break;
             }
 

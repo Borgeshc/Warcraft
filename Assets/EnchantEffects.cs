@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatusEffects : MonoBehaviour
+public class EnchantEffects : MonoBehaviour
 {
     Health health;
 

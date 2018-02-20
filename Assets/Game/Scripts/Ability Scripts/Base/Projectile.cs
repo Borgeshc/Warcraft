@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public virtual void SetProjectileValues(Transform _target, int _minimumDamage, int _maximumDamage, int _criticalStrikeChance, float _criticalStrikeDamage, float _statusLength, NamePlate _enemyNamePlate)
+    public float speed = 5f;
+
+    public Ability.Enchant currentEnchant;
+
+    protected Transform target;
+    protected int minimumDamage;
+    protected int maximumDamage;
+    protected int criticalStrikeChance;
+    protected float criticalStrikeDamage;
+    protected float statusLength;
+    protected NamePlate enemyNamePlate;
+
+    protected float smoothTime;
+
+    public virtual void SetProjectileValues(Transform _target, int _minimumDamage, int _maximumDamage, int _criticalStrikeChance, float _criticalStrikeDamage, float _statusLength, NamePlate _enemyNamePlate, Ability.Enchant enchant)
     {
 
     }
