@@ -459,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Incinerating Arrow
   abilityIcon: {fileID: 21300000, guid: a91e4836e1f000947bb891361d060c99, type: 3}
-  abilityCooldown: 5
+  abilityCooldown: 20
   statusLength: 5
   requiresTarget: 0
   enchant: 1

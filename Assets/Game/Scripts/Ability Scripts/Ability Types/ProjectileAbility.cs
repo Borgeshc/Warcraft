@@ -92,11 +92,17 @@ public class ProjectileAbility : Ability
         {
             for (int i = 0; i < numberOfShots; i++)
             {
-                FireProjectile(Target.target.transform);
+                if(Target.target)
+                    FireProjectile(Target.target.transform);
                 yield return new WaitForSeconds(timeBetweenShots);
             }
         }
-        RemoveEnchant();
+
+        for (int i = 0; i < AbilityLoadout.abilities.Count; i++)
+        {
+            AbilityLoadout.abilities[i].RemoveEnchant();
+        }
+
         TriggerCooldown();
     }
 
