@@ -50,15 +50,20 @@ public class ActionButton : MonoBehaviour
         }
     }
 
+    public bool ShowingCooldown()
+    {
+        return showingCooldown;
+    }
+
     IEnumerator Cooldown()
     {
         for(float i = 1; i > 0; i -= .1f)
         {
             cooldownProgress.fillAmount = i;
             yield return new WaitForSeconds(cooldown / 10);
-            showingCooldown = false;
         }
         cooldownProgress.fillAmount = 0f;
+        showingCooldown = false;
     }
 
     public void DisableIconImage()

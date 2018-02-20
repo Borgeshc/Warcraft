@@ -42,6 +42,12 @@ public class AbilityLoadout : MonoBehaviour
     public ActionButton actionButton12;
     public Ability actionButton12Ability;
 
+    [Space, Header("Action Bar Variables")]
+    public float globalCooldown;
+    public GameObject targetRequiredText;
+
+    bool requiringTarget;
+
     private void Start()
     {
         UpdateIcons();
@@ -54,184 +60,277 @@ public class AbilityLoadout : MonoBehaviour
             case 1:
                 if(actionButton1Ability)
                 {
+                    if (actionButton1Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton1Ability.ActivateAbility();
-                    actionButton1.ShowCooldown(actionButton1Ability.abilityCooldown);
+
+                    if(!actionButton1.ShowingCooldown())
+                        actionButton1.ShowCooldown(actionButton1Ability.abilityCooldown);
                 }
                 break;
             case 2:
                 if (actionButton2Ability)
                 {
+                    if (actionButton2Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton2Ability.ActivateAbility();
-                    actionButton2.ShowCooldown(actionButton2Ability.abilityCooldown);
+
+                    if (!actionButton2.ShowingCooldown())
+                        actionButton2.ShowCooldown(actionButton2Ability.abilityCooldown);
                 }
                 break;
             case 3:
                 if (actionButton3Ability)
                 {
+                    if (actionButton3Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton3Ability.ActivateAbility();
-                    actionButton3.ShowCooldown(actionButton3Ability.abilityCooldown);
+
+                    if (!actionButton3.ShowingCooldown())
+                        actionButton3.ShowCooldown(actionButton3Ability.abilityCooldown);
                 }
                 break;
             case 4:
                 if (actionButton4Ability)
                 {
+                    if (actionButton4Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton4Ability.ActivateAbility();
-                    actionButton4.ShowCooldown(actionButton4Ability.abilityCooldown);
+
+                    if (!actionButton4.ShowingCooldown())
+                        actionButton4.ShowCooldown(actionButton4Ability.abilityCooldown);
                 }
                 break;
             case 5:
                 if (actionButton5Ability)
                 {
+                    if (actionButton5Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton5Ability.ActivateAbility();
-                    actionButton5.ShowCooldown(actionButton5Ability.abilityCooldown);
+
+                    if (!actionButton5.ShowingCooldown())
+                        actionButton5.ShowCooldown(actionButton5Ability.abilityCooldown);
                 }
                 break;
             case 6:
                 if (actionButton6Ability)
                 {
+                    if (actionButton6Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton6Ability.ActivateAbility();
-                    actionButton6.ShowCooldown(actionButton6Ability.abilityCooldown);
+
+                    if (!actionButton6.ShowingCooldown())
+                        actionButton6.ShowCooldown(actionButton6Ability.abilityCooldown);
                 }
                 break;
             case 7:
                 if (actionButton7Ability)
                 {
+                    if (actionButton7Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton7Ability.ActivateAbility();
-                    actionButton7.ShowCooldown(actionButton7Ability.abilityCooldown);
+
+                    if (!actionButton7.ShowingCooldown())
+                        actionButton7.ShowCooldown(actionButton7Ability.abilityCooldown);
                 }
                 break;
             case 8:
                 if (actionButton8Ability)
                 {
+                    if (actionButton8Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton8Ability.ActivateAbility();
-                    actionButton8.ShowCooldown(actionButton8Ability.abilityCooldown);
+
+                    if (!actionButton8.ShowingCooldown())
+                        actionButton8.ShowCooldown(actionButton8Ability.abilityCooldown);
                 }
                 break;
             case 9:
                 if (actionButton9Ability)
                 {
+                    if (actionButton9Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton9Ability.ActivateAbility();
-                    actionButton9.ShowCooldown(actionButton9Ability.abilityCooldown);
+
+                    if (!actionButton9.ShowingCooldown())
+                        actionButton9.ShowCooldown(actionButton9Ability.abilityCooldown);
                 }
                 break;
             case 10:
                 if (actionButton10Ability)
                 {
+                    if (actionButton10Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton10Ability.ActivateAbility();
-                    actionButton10.ShowCooldown(actionButton10Ability.abilityCooldown);
+
+                    if (!actionButton10.ShowingCooldown())
+                        actionButton10.ShowCooldown(actionButton10Ability.abilityCooldown);
                 }
                 break;
             case 11:
                 if (actionButton11Ability)
                 {
+                    if (actionButton11Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton11Ability.ActivateAbility();
-                    actionButton11.ShowCooldown(actionButton11Ability.abilityCooldown);
+
+                    if (!actionButton11.ShowingCooldown())
+                        actionButton11.ShowCooldown(actionButton11Ability.abilityCooldown);
                 }
                 break;
             case 12:
                 if (actionButton12Ability)
                 {
+                    if (actionButton12Ability.requiresTarget && Target.target == null)
+                    {
+                        if (!requiringTarget)
+                            StartCoroutine(TargetRequired());
+
+                        return;
+                    }
                     actionButton12Ability.ActivateAbility();
-                    actionButton12.ShowCooldown(actionButton12Ability.abilityCooldown);
+
+                    if (!actionButton12.ShowingCooldown())
+                        actionButton12.ShowCooldown(actionButton12Ability.abilityCooldown);
                 }
                 break;
         }
 
         if(actionButton1Ability)
         {
-            if(!actionButton1Ability.OnCooldown())
-                actionButton1.ShowCooldown(1);
-
-            StartCoroutine(actionButton1Ability.GlobalCooldown());
+            if(!actionButton1Ability.OnCooldown() && !actionButton1.ShowingCooldown())
+                actionButton1.ShowCooldown(globalCooldown);
         }
 
         if (actionButton2Ability)
         {
-            if (!actionButton2Ability.OnCooldown())
-                actionButton2.ShowCooldown(1);
-
-            StartCoroutine(actionButton2Ability.GlobalCooldown());
+            if (!actionButton2Ability.OnCooldown() && !actionButton2.ShowingCooldown())
+                actionButton2.ShowCooldown(globalCooldown);
         }
 
         if (actionButton3Ability)
         {
-            if (!actionButton3Ability.OnCooldown())
-                actionButton3.ShowCooldown(1);
-
-            StartCoroutine(actionButton3Ability.GlobalCooldown());
+            if (!actionButton3Ability.OnCooldown() && !actionButton3.ShowingCooldown())
+                actionButton3.ShowCooldown(globalCooldown);
         }
 
         if (actionButton4Ability)
         {
-            if (!actionButton4Ability.OnCooldown())
-                actionButton4.ShowCooldown(1);
-
-            StartCoroutine(actionButton4Ability.GlobalCooldown());
+            if (!actionButton4Ability.OnCooldown() && !actionButton4.ShowingCooldown())
+                actionButton4.ShowCooldown(globalCooldown);
         }
 
         if (actionButton5Ability)
         {
-            if (!actionButton5Ability.OnCooldown())
-                actionButton5.ShowCooldown(1);
-
-            StartCoroutine(actionButton5Ability.GlobalCooldown());
+            if (!actionButton5Ability.OnCooldown() && !actionButton5.ShowingCooldown())
+                actionButton5.ShowCooldown(globalCooldown);
         }
 
         if (actionButton6Ability)
         {
-            if (!actionButton6Ability.OnCooldown())
-                actionButton6.ShowCooldown(1);
-
-            StartCoroutine(actionButton6Ability.GlobalCooldown());
+            if (!actionButton6Ability.OnCooldown() && !actionButton6.ShowingCooldown())
+                actionButton6.ShowCooldown(globalCooldown);
         }
 
         if (actionButton7Ability)
         {
-            if (!actionButton7Ability.OnCooldown())
-                actionButton7.ShowCooldown(1);
-
-            StartCoroutine(actionButton7Ability.GlobalCooldown());
+            if (!actionButton7Ability.OnCooldown() && !actionButton7.ShowingCooldown())
+                actionButton7.ShowCooldown(globalCooldown);
         }
 
         if (actionButton8Ability)
         {
-            if (!actionButton8Ability.OnCooldown())
-                actionButton8.ShowCooldown(1);
-
-            StartCoroutine(actionButton8Ability.GlobalCooldown());
+            if (!actionButton8Ability.OnCooldown() && !actionButton8.ShowingCooldown())
+                actionButton8.ShowCooldown(globalCooldown);
         }
 
         if (actionButton9Ability)
         {
-            if (!actionButton9Ability.OnCooldown())
-                actionButton9.ShowCooldown(1);
-
-            StartCoroutine(actionButton9Ability.GlobalCooldown());
+            if (!actionButton9Ability.OnCooldown() && !actionButton9.ShowingCooldown())
+                actionButton9.ShowCooldown(globalCooldown);
         }
 
         if (actionButton10Ability)
         {
-            if (!actionButton10Ability.OnCooldown())
-                actionButton10.ShowCooldown(1);
-
-            StartCoroutine(actionButton10Ability.GlobalCooldown());
+            if (!actionButton10Ability.OnCooldown() && !actionButton10.ShowingCooldown())
+                actionButton10.ShowCooldown(globalCooldown);
         }
 
         if (actionButton11Ability)
         {
-            if (!actionButton11Ability.OnCooldown())
-                actionButton11.ShowCooldown(1);
-
-            StartCoroutine(actionButton11Ability.GlobalCooldown());
+            if (!actionButton11Ability.OnCooldown() && !actionButton11.ShowingCooldown())
+                actionButton11.ShowCooldown(globalCooldown);
         }
 
         if (actionButton12Ability)
         {
-            if (!actionButton12Ability.OnCooldown())
-                actionButton12.ShowCooldown(1);
-
-            StartCoroutine(actionButton12Ability.GlobalCooldown()); 
+            if (!actionButton12Ability.OnCooldown() && !actionButton12.ShowingCooldown())
+                actionButton12.ShowCooldown(globalCooldown);
         }
+    }
+
+    IEnumerator TargetRequired()
+    {
+        requiringTarget = true;
+        targetRequiredText.SetActive(true);
+        yield return new WaitForSeconds(1);
+        targetRequiredText.SetActive(false);
+        requiringTarget = false;
     }
 
     public void UpdateIcons()

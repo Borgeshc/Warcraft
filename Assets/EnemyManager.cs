@@ -18,7 +18,6 @@ public class EnemyManager : EntityManager
 
     public override void ActivateNamePlate(Entity entity)
     {
-        print("Switched Target");
         //enemyNamePlate.SetUpNamePlate(entity.entityName, entity.entityImage, entity.stats.level, health.health, entity.stats.resource);
         enemyNamePlate.UpdateHealth(health.health);
     }

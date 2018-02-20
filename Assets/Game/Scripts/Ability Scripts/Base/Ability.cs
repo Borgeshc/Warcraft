@@ -7,6 +7,7 @@ public class Ability : MonoBehaviour
     public string abilityName;
     public Sprite abilityIcon;
     public float abilityCooldown;
+    public bool requiresTarget;
 
     bool onCooldown;
     [HideInInspector]

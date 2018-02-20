@@ -17,7 +17,6 @@ public class Targetable : MonoBehaviour
 
     public void Target(EntityManager playerManager)
     {
-        print("Targeted " + gameObject.name);
         if (hasNamePlate)
         {
             playerManager.ActivateNamePlate(entity);

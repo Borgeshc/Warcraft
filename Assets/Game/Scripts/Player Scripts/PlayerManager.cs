@@ -18,7 +18,6 @@ public class PlayerManager : EntityManager
 
     public override void ActivateNamePlate(Entity entity)
     {
-        print("Activate name plate");
         enemyNamePlate.SetUpNamePlate(entity.entityName, entity.entityImage, entity.stats.level, entity.stats.health, entity.stats.resource);
         enemyNamePlate.gameObject.SetActive(true);
     }

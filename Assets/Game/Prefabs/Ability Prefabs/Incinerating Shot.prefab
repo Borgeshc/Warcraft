@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4196010342808862}
   - component: {fileID: 114846780083821466}
   - component: {fileID: 136846196491707476}
+  - component: {fileID: 114143271387824266}
   m_Layer: 0
   m_Name: Incinerating Shot
   m_TagString: Untagged
@@ -126,6 +127,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114143271387824266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447570011435674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61dd248025297b40b64ba66e9e79f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfter: 3
 --- !u!114 &114846780083821466
 MonoBehaviour:
   m_ObjectHideFlags: 1

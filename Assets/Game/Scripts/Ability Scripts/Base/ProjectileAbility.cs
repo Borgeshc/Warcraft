@@ -12,8 +12,6 @@ public class ProjectileAbility : Ability
     public float statusLength;
     public Stats stats;
 
-    public bool requiresTarget;
-
     public override void ActivateAbility()
     {
         if (requiresTarget && Target.target == null) return;
