@@ -75,5 +75,17 @@ public class Target : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         checkingNearByEnemies = false;
     }
+
+    public List<GameObject> GrabTargets(int numberOfTargets)
+    {
+        List<GameObject> targetsToGrab = new List<GameObject>();
+        for(int i = 0; i < numberOfTargets; i++)
+        {
+            if(nearByTargets[i] != null)
+                targetsToGrab.Add(nearByTargets[i]);
+        }
+
+        return targetsToGrab;
+    }
 }
 
