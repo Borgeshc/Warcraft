@@ -6,19 +6,22 @@ public class Targetable : MonoBehaviour
 {
     public bool hasNamePlate;
 
-    public delegate void Targeted(Entity entity);
-    public static event Targeted OnTargeted;
-
+    EntityManager entityManager;
     Entity entity;
 
     private void Start()
     {
         entity = GetComponent<Entity>();
+        entityManager = GetComponent<EntityManager>();
     }
 
-    public virtual void Target()
+    public void Target(EntityManager playerManager)
     {
+        print("Targeted " + gameObject.name);
         if (hasNamePlate)
-            OnTargeted(entity);
+        {
+            playerManager.ActivateNamePlate(entity);
+            entityManager.ActivateNamePlate(entity);
+        }
     }
 }

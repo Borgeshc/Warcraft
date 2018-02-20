@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : EntityManager
 {
     public NamePlate playerNamePlate;
     public NamePlate enemyNamePlate;
@@ -16,18 +16,9 @@ public class PlayerManager : MonoBehaviour
         playerNamePlate.SetUpNamePlate(playerEntity.entityName, playerEntity.entityImage, playerEntity.stats.level, playerEntity.stats.health, playerEntity.stats.resource);
     }
 
-    private void OnEnable()
+    public override void ActivateNamePlate(Entity entity)
     {
-        Targetable.OnTargeted += ActivateEnemyNamePlate; 
-    }
-
-    private void OnDisable()
-    {
-        Targetable.OnTargeted -= ActivateEnemyNamePlate;
-    }
-
-    void ActivateEnemyNamePlate(Entity entity)
-    {
+        print("Activate name plate");
         enemyNamePlate.SetUpNamePlate(entity.entityName, entity.entityImage, entity.stats.level, entity.stats.health, entity.stats.resource);
         enemyNamePlate.gameObject.SetActive(true);
     }

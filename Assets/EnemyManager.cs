@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : EntityManager
 {
     public NamePlate enemyNamePlate;
     Health health;
@@ -16,18 +16,7 @@ public class EnemyManager : MonoBehaviour
         enemyNamePlate.SetUpNamePlate(entity.entityName, entity.entityImage, entity.stats.level, entity.stats.health, entity.stats.resource);
     }
 
-    private void OnEnable()
-    {
-        Targetable.OnTargeted += SetUpNamePlate;    //This is calling on all enemies, have to change it <-------
-        //THIS IS A BUG
-    }
-
-    private void OnDisable()
-    {
-        Targetable.OnTargeted -= SetUpNamePlate;
-    }
-
-    public void SetUpNamePlate(Entity entity)
+    public override void ActivateNamePlate(Entity entity)
     {
         print("Switched Target");
         //enemyNamePlate.SetUpNamePlate(entity.entityName, entity.entityImage, entity.stats.level, health.health, entity.stats.resource);

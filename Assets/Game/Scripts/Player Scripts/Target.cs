@@ -23,7 +23,7 @@ public class Target : MonoBehaviour
             if(Physics.Raycast(ray, out hit, 100, targetable))
             {
                 target = hit.transform.gameObject;
-                hit.transform.GetComponent<Targetable>().Target();
+                hit.transform.GetComponent<Targetable>().Target(playerManager);
             }
             else
             {
