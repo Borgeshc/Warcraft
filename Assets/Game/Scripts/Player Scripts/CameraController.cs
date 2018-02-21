@@ -11,7 +11,6 @@ public class CameraController : MonoBehaviour
 
     float horizontal;
     float horizontal2;
-    float vertical;
 
     Vector3 velocity;
     GameObject player;
@@ -28,7 +27,6 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Mouse X");
         horizontal2 = Input.GetAxis("Horizontal");
         leftClick = Input.GetKey(KeyCode.Mouse0);

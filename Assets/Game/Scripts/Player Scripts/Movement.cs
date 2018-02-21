@@ -12,7 +12,6 @@ public class Movement : MonoBehaviour
 
     float vertical;
     float horizontal;
-    float horizontal2;
     float strafe;
 
     Vector3 movement;
@@ -31,7 +30,6 @@ public class Movement : MonoBehaviour
         leftClick = Input.GetKey(KeyCode.Mouse0);
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
-        horizontal2 = Input.GetAxis("Mouse X");
         strafe = Input.GetAxis("Strafe");
 
         if(rightClick)
