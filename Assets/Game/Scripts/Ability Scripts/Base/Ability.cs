@@ -30,6 +30,11 @@ public class Ability : MonoBehaviour
 
     }
 
+    public virtual void ReActivateAbility()
+    {
+
+    }
+
     public void RemoveEnchant()
     {
         currentEnchant = Enchant.None;

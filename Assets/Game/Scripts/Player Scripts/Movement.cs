@@ -48,7 +48,6 @@ public class Movement : MonoBehaviour
 
         transform.position += movement;
 
-
         if (vertical > 0)
             transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z), rotationAdjustSpeed * Time.fixedDeltaTime);
     }

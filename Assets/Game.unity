@@ -168,7 +168,7 @@ Prefab:
     - target: {fileID: 224828425111401408, guid: fa249f1717ac16043a63b2d0367bc963,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224828425111401408, guid: fa249f1717ac16043a63b2d0367bc963,
         type: 2}
@@ -1438,6 +1438,79 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372483132}
+--- !u!1 &372876709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 372876710}
+  - component: {fileID: 372876711}
+  m_Layer: 0
+  m_Name: Rune Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &372876710
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 372876709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 496809578}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &372876711
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 372876709}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 60fd4d3ad71c3d947bd4e6703dd0c73b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12, y: 12}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!1 &377694848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,9 +1937,9 @@ MonoBehaviour:
   actionButton9: {fileID: 506933181}
   actionButton9Ability: {fileID: 744741198}
   actionButton10: {fileID: 880586088}
-  actionButton10Ability: {fileID: 0}
+  actionButton10Ability: {fileID: 1703961680}
   actionButton11: {fileID: 832132435}
-  actionButton11Ability: {fileID: 0}
+  actionButton11Ability: {fileID: 899403178}
   actionButton12: {fileID: 1810131983}
   actionButton12Ability: {fileID: 0}
   globalCooldown: 0.5
@@ -1964,6 +2037,35 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 483051729}
+--- !u!1 &496809577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 496809578}
+  m_Layer: 0
+  m_Name: Placement Rune
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &496809578
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 496809577}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 372876710}
+  m_Father: {fileID: 899403177}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &506933179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2942,7 +3044,7 @@ GameObject:
   - component: {fileID: 883078800}
   - component: {fileID: 883078799}
   - component: {fileID: 883078798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3038,6 +3140,62 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &899403176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 899403177}
+  - component: {fileID: 899403178}
+  m_Layer: 0
+  m_Name: Incinerating Trap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &899403177
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 899403176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 496809578}
+  m_Father: {fileID: 1727546790}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &899403178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 899403176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49d19d8e34aeae4ca23c35d5e3f27f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Incinerating Trap
+  abilityIcon: {fileID: 21300000, guid: a91e4836e1f000947bb891361d060c99, type: 3}
+  abilityCooldown: 15
+  statusLength: 0
+  requiresTarget: 0
+  enchant: 0
+  currentEnchant: 0
+  globalCooldown: 0
+  placementPendingObject: {fileID: 496809577}
+  objectToPlace: {fileID: 1355246994411922, guid: f39618e55f61266429675ed58ba0dde4,
+    type: 2}
+  enemyNamePlate: {fileID: 342464656}
+  placementLayerMask:
+    serializedVersion: 2
+    m_Bits: 1536
 --- !u!1 &900833548
 GameObject:
   m_ObjectHideFlags: 0
@@ -4586,6 +4744,79 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1509071722}
+--- !u!1 &1514188098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1514188100}
+  - component: {fileID: 1514188099}
+  m_Layer: 0
+  m_Name: Rune Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1514188099
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1514188098}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 60fd4d3ad71c3d947bd4e6703dd0c73b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12, y: 12}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!4 &1514188100
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1514188098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2135607868}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1526880828 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224946513370951454, guid: 5bf8ab2a4f054bc479ef97aef3810967,
@@ -4607,12 +4838,12 @@ Prefab:
     - target: {fileID: 224946513370951454, guid: 5bf8ab2a4f054bc479ef97aef3810967,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -910
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224946513370951454, guid: 5bf8ab2a4f054bc479ef97aef3810967,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2960.331
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224946513370951454, guid: 5bf8ab2a4f054bc479ef97aef3810967,
         type: 2}
@@ -4732,12 +4963,12 @@ Prefab:
     - target: {fileID: 224946513370951454, guid: 5bf8ab2a4f054bc479ef97aef3810967,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -510
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224946513370951454, guid: 5bf8ab2a4f054bc479ef97aef3810967,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2960.331
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224946513370951454, guid: 5bf8ab2a4f054bc479ef97aef3810967,
         type: 2}
@@ -5359,6 +5590,62 @@ Transform:
   m_Father: {fileID: 1727546790}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1703961678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1703961679}
+  - component: {fileID: 1703961680}
+  m_Layer: 0
+  m_Name: Exertion Trap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1703961679
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1703961678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2135607868}
+  m_Father: {fileID: 1727546790}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1703961680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1703961678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49d19d8e34aeae4ca23c35d5e3f27f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: Exertion Trap
+  abilityIcon: {fileID: 21300000, guid: a91e4836e1f000947bb891361d060c99, type: 3}
+  abilityCooldown: 15
+  statusLength: 0
+  requiresTarget: 0
+  enchant: 0
+  currentEnchant: 0
+  globalCooldown: 0
+  placementPendingObject: {fileID: 2135607867}
+  objectToPlace: {fileID: 1355246994411922, guid: ae83529c363609f43989382c0afe1d18,
+    type: 2}
+  enemyNamePlate: {fileID: 342464656}
+  placementLayerMask:
+    serializedVersion: 2
+    m_Bits: 1536
 --- !u!1 &1727546789
 GameObject:
   m_ObjectHideFlags: 0
@@ -5393,6 +5680,8 @@ Transform:
   - {fileID: 1260922295}
   - {fileID: 1064952164}
   - {fileID: 744741197}
+  - {fileID: 1703961679}
+  - {fileID: 899403177}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6328,7 +6617,7 @@ Prefab:
     - target: {fileID: 224828425111401408, guid: fa249f1717ac16043a63b2d0367bc963,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224828425111401408, guid: fa249f1717ac16043a63b2d0367bc963,
         type: 2}
@@ -6551,4 +6840,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2135607867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2135607868}
+  m_Layer: 0
+  m_Name: Placement Rune
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2135607868
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2135607867}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1514188100}
+  m_Father: {fileID: 1703961679}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
