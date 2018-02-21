@@ -151,7 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  statusEffect: 1
+  pushBackForce: 250
+  currentEnchant: 0
 --- !u!136 &136846196491707476
 CapsuleCollider:
   m_ObjectHideFlags: 1

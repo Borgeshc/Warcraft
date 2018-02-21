@@ -151,7 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  statusEffect: 0
+  pushBackForce: 250
+  currentEnchant: 0
 --- !u!135 &135777902170954538
 SphereCollider:
   m_ObjectHideFlags: 1

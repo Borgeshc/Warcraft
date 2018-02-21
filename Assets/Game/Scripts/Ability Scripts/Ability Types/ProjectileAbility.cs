@@ -47,6 +47,7 @@ public class ProjectileAbility : Ability
                         FireProjectile(Target.nearByTargets[i].transform);
                     }
                     yield return new WaitForSeconds(timeBetweenShots);
+                    RemoveEnchants();
                 }
             }
             else
@@ -58,6 +59,7 @@ public class ProjectileAbility : Ability
 
                         FireProjectile(Target.nearByTargets[i].transform);
                         yield return new WaitForSeconds(timeBetweenShots);
+                        RemoveEnchants();
                     }
                 }
             }
@@ -73,6 +75,7 @@ public class ProjectileAbility : Ability
                         FireProjectile(target.GrabTargets(numberOfTargets)[i].transform);
                     }
                     yield return new WaitForSeconds(timeBetweenShots);
+                    RemoveEnchants();
                 }
             }
             else
@@ -84,6 +87,7 @@ public class ProjectileAbility : Ability
                     
                         FireProjectile(target.GrabTargets(numberOfTargets)[i].transform);
                         yield return new WaitForSeconds(timeBetweenShots);
+                        RemoveEnchants();
                     }
                 }
             }
@@ -95,12 +99,8 @@ public class ProjectileAbility : Ability
                 if(Target.target)
                     FireProjectile(Target.target.transform);
                 yield return new WaitForSeconds(timeBetweenShots);
+                RemoveEnchants();
             }
-        }
-
-        for (int i = 0; i < AbilityLoadout.abilities.Count; i++)
-        {
-            AbilityLoadout.abilities[i].RemoveEnchant();
         }
 
         TriggerCooldown();
@@ -113,5 +113,13 @@ public class ProjectileAbility : Ability
             newProjectile.GetComponent<Projectile>().SetProjectileValues(myTarget, minimumDamage, maximumDamage, stats.criticalStrikeChance, stats.criticalStrikeDamage, statusLength, enemyNamePlate, currentEnchant);
         else
             Destroy(newProjectile);
+    }
+
+    void RemoveEnchants()
+    {
+        for (int i = 0; i < AbilityLoadout.abilities.Count; i++)
+        {
+            AbilityLoadout.abilities[i].RemoveEnchant();
+        }
     }
 }

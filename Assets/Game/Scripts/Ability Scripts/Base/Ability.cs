@@ -14,7 +14,8 @@ public class Ability : MonoBehaviour
     {
         None,
         Dot,
-        Slow
+        Slow,
+        Weighted
     };
 
     public Enchant enchant;

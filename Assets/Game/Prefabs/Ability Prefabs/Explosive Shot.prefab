@@ -37,11 +37,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4196010342808862}
-  - component: {fileID: 114846780083821466}
-  - component: {fileID: 136932170063223244}
-  - component: {fileID: 114943077466069234}
+  - component: {fileID: 135777902170954538}
+  - component: {fileID: 114606916233875804}
+  - component: {fileID: 114631926099559616}
   m_Layer: 0
-  m_Name: Impact Shot
+  m_Name: Explosive Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 000c27ecd2d55e94f882326a21fd43c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,21 +127,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114846780083821466
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1447570011435674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c902e0f8082104488e62adefac62dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.1
-  pushBackForce: 250
-  currentEnchant: 0
---- !u!114 &114943077466069234
+--- !u!114 &114606916233875804
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -153,8 +139,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfter: 3
---- !u!136 &136932170063223244
-CapsuleCollider:
+--- !u!114 &114631926099559616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447570011435674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112a47a863e631e49a31aa0c51184551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  pushBackForce: 250
+  currentEnchant: 0
+  explosiveMinDamage: 4
+  explosiveMaxDamage: 6
+  explosiveRange: 10
+  targetable:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!135 &135777902170954538
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -162,7 +168,6 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 2
+  serializedVersion: 2
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}

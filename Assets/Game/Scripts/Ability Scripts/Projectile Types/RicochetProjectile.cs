@@ -39,7 +39,12 @@ public class RicochetProjectile : Projectile
             int randomDamage = Random.Range(minimumDamage, maximumDamage);
 
             if(target)
+            {
                 target.GetComponent<Health>().TookDamage(randomDamage, criticalStrikeChance, criticalStrikeDamage, enemyNamePlate);
+
+                if (currentEnchant == Ability.Enchant.Weighted)
+                    PushBack(target.gameObject);
+            }
 
             ricochetCounter++;
             if (nearbyTargetIndex < Target.nearByTargets.Count)
@@ -56,8 +61,6 @@ public class RicochetProjectile : Projectile
             }
             return;
         }
-
-       
     }
 
     private void OnTriggerEnter(Collider other)
