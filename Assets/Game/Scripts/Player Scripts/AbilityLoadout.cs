@@ -24,24 +24,6 @@ public class AbilityLoadout : MonoBehaviour
     [Space]
     public ActionButton actionButton6;
     public Ability actionButton6Ability;
-    [Space]
-    public ActionButton actionButton7;
-    public Ability actionButton7Ability;
-    [Space]
-    public ActionButton actionButton8;
-    public Ability actionButton8Ability;
-    [Space]
-    public ActionButton actionButton9;
-    public Ability actionButton9Ability;
-    [Space]
-    public ActionButton actionButton10;
-    public Ability actionButton10Ability;
-    [Space]
-    public ActionButton actionButton11;
-    public Ability actionButton11Ability;
-    [Space]
-    public ActionButton actionButton12;
-    public Ability actionButton12Ability;
     #endregion
 
     [Space, Header("Action Bar Variables")]
@@ -78,24 +60,6 @@ public class AbilityLoadout : MonoBehaviour
 
         if (actionButton6Ability)
             abilities.Add(actionButton6Ability);
-
-        if (actionButton7Ability)
-            abilities.Add(actionButton7Ability);
-
-        if (actionButton8Ability)
-            abilities.Add(actionButton8Ability);
-
-        if (actionButton9Ability)
-            abilities.Add(actionButton9Ability);
-
-        if (actionButton10Ability)
-            abilities.Add(actionButton10Ability);
-
-        if (actionButton11Ability)
-            abilities.Add(actionButton11Ability);
-
-        if (actionButton12Ability)
-            abilities.Add(actionButton12Ability);
     }
     #endregion
     #region UpdateAbilities()
@@ -129,36 +93,6 @@ public class AbilityLoadout : MonoBehaviour
         if (actionButton6Ability)
         {
             abilities[5] = actionButton6Ability;
-        }
-
-        if (actionButton7Ability)
-        {
-            abilities[6] = actionButton7Ability;
-        }
-
-        if (actionButton8Ability)
-        {
-            abilities[7] = actionButton8Ability;
-        }
-
-        if (actionButton9Ability)
-        {
-            abilities[8] = actionButton9Ability;
-        }
-
-        if (actionButton10Ability)
-        {
-            abilities[9] = actionButton10Ability;
-        }
-
-        if (actionButton11Ability)
-        {
-            abilities[10] = actionButton11Ability;
-        }
-
-        if (actionButton12Ability)
-        {
-            abilities[11] = actionButton12Ability;
         }
     }
     #endregion
@@ -264,102 +198,6 @@ public class AbilityLoadout : MonoBehaviour
                         actionButton6.ShowCooldown(actionButton6Ability.abilityCooldown);
                 }
                 break;
-            case 7:
-                if (actionButton7Ability)
-                {
-                    if (actionButton7Ability.requiresTarget && Target.target == null)
-                    {
-                        if (!requiringTarget)
-                            StartCoroutine(TargetRequired());
-
-                        return;
-                    }
-                    actionButton7Ability.ActivateAbility();
-
-                    if (!actionButton7.ShowingCooldown())
-                        actionButton7.ShowCooldown(actionButton7Ability.abilityCooldown);
-                }
-                break;
-            case 8:
-                if (actionButton8Ability)
-                {
-                    if (actionButton8Ability.requiresTarget && Target.target == null)
-                    {
-                        if (!requiringTarget)
-                            StartCoroutine(TargetRequired());
-
-                        return;
-                    }
-                    actionButton8Ability.ActivateAbility();
-
-                    if (!actionButton8.ShowingCooldown())
-                        actionButton8.ShowCooldown(actionButton8Ability.abilityCooldown);
-                }
-                break;
-            case 9:
-                if (actionButton9Ability)
-                {
-                    if (actionButton9Ability.requiresTarget && Target.target == null)
-                    {
-                        if (!requiringTarget)
-                            StartCoroutine(TargetRequired());
-
-                        return;
-                    }
-                    actionButton9Ability.ActivateAbility();
-
-                    if (!actionButton9.ShowingCooldown())
-                        actionButton9.ShowCooldown(actionButton9Ability.abilityCooldown);
-                }
-                break;
-            case 10:
-                if (actionButton10Ability)
-                {
-                    if (actionButton10Ability.requiresTarget && Target.target == null)
-                    {
-                        if (!requiringTarget)
-                            StartCoroutine(TargetRequired());
-
-                        return;
-                    }
-                    actionButton10Ability.ActivateAbility();
-
-                    if (!actionButton10.ShowingCooldown())
-                        actionButton10.ShowCooldown(actionButton10Ability.abilityCooldown);
-                }
-                break;
-            case 11:
-                if (actionButton11Ability)
-                {
-                    if (actionButton11Ability.requiresTarget && Target.target == null)
-                    {
-                        if (!requiringTarget)
-                            StartCoroutine(TargetRequired());
-
-                        return;
-                    }
-                    actionButton11Ability.ActivateAbility();
-
-                    if (!actionButton11.ShowingCooldown())
-                        actionButton11.ShowCooldown(actionButton11Ability.abilityCooldown);
-                }
-                break;
-            case 12:
-                if (actionButton12Ability)
-                {
-                    if (actionButton12Ability.requiresTarget && Target.target == null)
-                    {
-                        if (!requiringTarget)
-                            StartCoroutine(TargetRequired());
-
-                        return;
-                    }
-                    actionButton12Ability.ActivateAbility();
-
-                    if (!actionButton12.ShowingCooldown())
-                        actionButton12.ShowCooldown(actionButton12Ability.abilityCooldown);
-                }
-                break;
         }
         #endregion
         #region GlobalCooldown
@@ -398,42 +236,6 @@ public class AbilityLoadout : MonoBehaviour
             if (!actionButton6Ability.OnCooldown() && !actionButton6.ShowingCooldown())
                 actionButton6.ShowCooldown(globalCooldown);
         }
-
-        if (actionButton7Ability)
-        {
-            if (!actionButton7Ability.OnCooldown() && !actionButton7.ShowingCooldown())
-                actionButton7.ShowCooldown(globalCooldown);
-        }
-
-        if (actionButton8Ability)
-        {
-            if (!actionButton8Ability.OnCooldown() && !actionButton8.ShowingCooldown())
-                actionButton8.ShowCooldown(globalCooldown);
-        }
-
-        if (actionButton9Ability)
-        {
-            if (!actionButton9Ability.OnCooldown() && !actionButton9.ShowingCooldown())
-                actionButton9.ShowCooldown(globalCooldown);
-        }
-
-        if (actionButton10Ability)
-        {
-            if (!actionButton10Ability.OnCooldown() && !actionButton10.ShowingCooldown())
-                actionButton10.ShowCooldown(globalCooldown);
-        }
-
-        if (actionButton11Ability)
-        {
-            if (!actionButton11Ability.OnCooldown() && !actionButton11.ShowingCooldown())
-                actionButton11.ShowCooldown(globalCooldown);
-        }
-
-        if (actionButton12Ability)
-        {
-            if (!actionButton12Ability.OnCooldown() && !actionButton12.ShowingCooldown())
-                actionButton12.ShowCooldown(globalCooldown);
-        }
         #endregion
     }
 
@@ -466,24 +268,6 @@ public class AbilityLoadout : MonoBehaviour
 
         if (actionButton6Ability)
             actionButton6.SetIconImage(actionButton6Ability.abilityIcon);
-
-        if (actionButton7Ability)
-            actionButton7.SetIconImage(actionButton7Ability.abilityIcon);
-
-        if (actionButton8Ability)
-            actionButton8.SetIconImage(actionButton8Ability.abilityIcon);
-
-        if (actionButton9Ability)
-            actionButton9.SetIconImage(actionButton9Ability.abilityIcon);
-
-        if (actionButton10Ability)
-            actionButton10.SetIconImage(actionButton10Ability.abilityIcon);
-
-        if (actionButton11Ability)
-            actionButton11.SetIconImage(actionButton11Ability.abilityIcon);
-
-        if (actionButton12Ability)
-            actionButton12.SetIconImage(actionButton12Ability.abilityIcon);
     }
     #endregion
 }
