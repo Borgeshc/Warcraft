@@ -6,9 +6,11 @@ public class Ability : MonoBehaviour
 {
     public string abilityName;
     public Sprite abilityIcon;
+    public Sprite abilityIconGreyscale;
     public float abilityCooldown;
     public float statusLength;
     public bool requiresTarget;
+    public bool abilityUnlocked;
 
     public enum Enchant
     {
@@ -24,6 +26,12 @@ public class Ability : MonoBehaviour
     bool onCooldown;
     [HideInInspector]
     public bool globalCooldown;
+
+    private void Start()
+    {
+        if (abilityUnlocked)
+            PlayerPrefsX.SetBool(abilityName, true);
+    }
 
     public virtual void ActivateAbility()
     {
@@ -67,5 +75,23 @@ public class Ability : MonoBehaviour
         globalCooldown = true;
         yield return new WaitForSeconds(1);
         globalCooldown = false;
+    }
+
+    public bool AbilityUnlocked()
+    {
+        if (abilityUnlocked)
+            return true;
+        else
+        return PlayerPrefsX.GetBool(abilityName);
+    }
+
+    public void UnlockAbility()
+    {
+        PlayerPrefsX.SetBool(abilityName, true);
+    }
+
+    public void LockAbility()
+    {
+        PlayerPrefsX.SetBool(abilityName, false);
     }
 }
