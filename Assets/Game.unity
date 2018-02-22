@@ -168,7 +168,7 @@ Prefab:
     - target: {fileID: 224828425111401408, guid: fa249f1717ac16043a63b2d0367bc963,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224828425111401408, guid: fa249f1717ac16043a63b2d0367bc963,
         type: 2}
@@ -1908,6 +1908,7 @@ MonoBehaviour:
   baseSpeed: 10
   rotationSpeed: 200
   rotationAdjustSpeed: 10
+  animationSmoothing: 10
 --- !u!114 &465248118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6785,7 +6786,7 @@ Prefab:
     - target: {fileID: 224828425111401408, guid: fa249f1717ac16043a63b2d0367bc963,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224828425111401408, guid: fa249f1717ac16043a63b2d0367bc963,
         type: 2}

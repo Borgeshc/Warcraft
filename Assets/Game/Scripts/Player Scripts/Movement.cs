@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public float baseSpeed = 10f;
     public float rotationSpeed = 200f;
     public float rotationAdjustSpeed = 100f;
+    public float animationSmoothing = 10f;
 
     float speed;
 
@@ -35,9 +36,9 @@ public class Movement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         strafe = Input.GetAxis("Strafe");
 
-        anim.SetFloat("Horizontal", horizontal);
-        anim.SetFloat("Vertical", vertical);
-        anim.SetFloat("Strafe", strafe);
+        anim.SetFloat("Horizontal", horizontal, 1f, Time.deltaTime * animationSmoothing);
+        anim.SetFloat("Vertical", vertical, 1f, Time.deltaTime * animationSmoothing);
+        anim.SetFloat("Strafe", strafe, 1f, Time.deltaTime * animationSmoothing);
 
         if(vertical == 0 && strafe == 0)
         {
