@@ -19,8 +19,11 @@ public class Movement : MonoBehaviour
     bool rightClick;
     bool leftClick;
 
+    Animator anim;
+
 	void Start ()
     {
+        anim = GetComponent<Animator>();
         speed = baseSpeed;
 	}
 	
@@ -31,6 +34,19 @@ public class Movement : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
         strafe = Input.GetAxis("Strafe");
+
+        anim.SetFloat("Horizontal", horizontal);
+        anim.SetFloat("Vertical", vertical);
+        anim.SetFloat("Strafe", strafe);
+
+        if(vertical == 0 && strafe == 0)
+        {
+            anim.SetBool("IsMoving", false);
+        }
+        else
+        {
+            anim.SetBool("IsMoving", true);
+        }
 
         if(rightClick)
             transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);

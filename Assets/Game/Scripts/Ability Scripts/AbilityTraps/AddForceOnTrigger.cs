@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AddForceOnTrigger : MonoBehaviour
+public class AddForceOnTrigger : Trap
 {
     public int force;
 
