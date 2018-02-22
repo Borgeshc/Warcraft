@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c902e0f8082104488e62adefac62dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 2
   pushBackForce: 250
   currentEnchant: 0
 --- !u!114 &114943077466069234
