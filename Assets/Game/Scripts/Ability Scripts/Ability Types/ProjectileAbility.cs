@@ -8,8 +8,6 @@ public class ProjectileAbility : Ability
     public GameObject spawnPosition;
     public NamePlate enemyNamePlate;
     public Stats stats;
-    public int minimumDamage;
-    public int maximumDamage;
     public int numberOfShots = 1;
     public float timeBetweenShots = 0f;
 
@@ -110,7 +108,7 @@ public class ProjectileAbility : Ability
     {
         GameObject newProjectile = Instantiate(projectile, spawnPosition.transform.position, spawnPosition.transform.rotation);
         if (Target.target != null)
-            newProjectile.GetComponent<Projectile>().SetProjectileValues(myTarget, minimumDamage, maximumDamage, stats.criticalStrikeChance, stats.criticalStrikeDamage, statusLength, enemyNamePlate, currentEnchant);
+            newProjectile.GetComponent<Projectile>().SetProjectileValues(myTarget, abilityMinDamage, abilityMaxDamage, stats.criticalStrikeChance, stats.criticalStrikeDamage, statusLength, enemyNamePlate, currentEnchant);
         else
             Destroy(newProjectile);
     }

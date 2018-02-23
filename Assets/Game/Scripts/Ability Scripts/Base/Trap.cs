@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    public int minDamage;
-    public int maxDamage;
+    protected int minDamage;
+    protected int maxDamage;
     public float statusLength;
     public Stats stats;
 
     protected NamePlate namePlate;
 
-    public void SetUpTrap(NamePlate _namePlate)
+    public void SetUpTrap(NamePlate _namePlate, int _minDamage, int _maxDamage)
     {
         namePlate = _namePlate;
+        minDamage = _minDamage;
+        maxDamage = _maxDamage;
     }
 }

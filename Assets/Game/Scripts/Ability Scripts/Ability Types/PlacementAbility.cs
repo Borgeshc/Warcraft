@@ -56,7 +56,7 @@ public class PlacementAbility : Ability
     public override void ReActivateAbility()
     {
         GameObject trap = Instantiate(objectToPlace, placementPendingObject.transform.position, Quaternion.identity);
-        trap.GetComponent<Trap>().SetUpTrap(enemyNamePlate);
+        trap.GetComponent<Trap>().SetUpTrap(enemyNamePlate, abilityMinDamage, abilityMaxDamage);
 
         if (placementPendingObject.activeInHierarchy)
             placementPendingObject.SetActive(false);

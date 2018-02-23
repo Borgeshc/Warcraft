@@ -7,7 +7,14 @@ public class Ability : MonoBehaviour
     public string abilityName;
     public Sprite abilityIcon;
     public Sprite abilityIconGreyscale;
+    public int abilityResourceRequirement;
+    public float abilityRange;
+    public int abilityMinDamage;
+    public int abilityMaxDamage;
     public float abilityCooldown;
+    [TextArea]
+    public string abilityDescription;
+    public bool abilityEnchantable;
     public float statusLength;
     public bool requiresTarget;
     public bool abilityUnlocked;
@@ -19,6 +26,16 @@ public class Ability : MonoBehaviour
         Slow,
         Weighted
     };
+
+    public enum ResourceType
+    {
+        None,
+        Arrows,
+        Energy
+    };
+
+    public ResourceType resourceType;
+
 
     public Enchant enchant;
     public Enchant currentEnchant;
