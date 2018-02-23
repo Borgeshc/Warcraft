@@ -12,6 +12,10 @@ public class Target : MonoBehaviour
     PlayerManager playerManager;
     bool checkingNearByEnemies;
 
+    List<Transform> allEnemies = new List<Transform>();
+
+    int tab;
+
     private void Start()
     {
         playerManager = GetComponent<PlayerManager>();
@@ -44,6 +48,58 @@ public class Target : MonoBehaviour
             checkingNearByEnemies = true;
             StartCoroutine(CheckNearByEnemies());
         }
+
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            if(target != null)
+            {
+                if (nearByTargets.Count >= 1)
+                {
+                    if (tab >= nearByTargets.Count - 1)
+                        tab = 0;
+                    else
+                        tab++;
+
+                    target = nearByTargets[tab];
+
+                    if (target)
+                        target.transform.GetComponent<Targetable>().Target(playerManager);
+                }
+            }
+            else
+            {
+                allEnemies.Clear();
+
+                foreach(GameObject go in GameObject.FindGameObjectsWithTag("Enemy"))
+                {
+                    allEnemies.Add(go.transform);
+                }
+
+                target = GetClosestEnemy(allEnemies).gameObject;
+
+                if(target)
+                    target.transform.GetComponent<Targetable>().Target(playerManager);
+            }
+        }
+    }
+
+    Transform GetClosestEnemy(List<Transform> enemies)
+    {
+        Transform bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+        foreach (Transform potentialTarget in enemies)
+        {
+            Vector3 directionToTarget = potentialTarget.position - currentPosition;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if (dSqrToTarget < closestDistanceSqr)
+            {
+                closestDistanceSqr = dSqrToTarget;
+                bestTarget = potentialTarget;
+            }
+        }
+
+        return bestTarget;
     }
 
     IEnumerator CheckNearByEnemies()
@@ -79,7 +135,7 @@ public class Target : MonoBehaviour
     public List<GameObject> GrabTargets(int numberOfTargets)
     {
         List<GameObject> targetsToGrab = new List<GameObject>();
-        for(int i = 0; i < numberOfTargets; i++)
+        for(int i = 0; i < numberOfTargets - 1; i++)
         {
             if(nearByTargets[i] != null)
                 targetsToGrab.Add(nearByTargets[i]);

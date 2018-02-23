@@ -47,7 +47,7 @@ public class AbilityInformation : MonoBehaviour
     }
 
     public void DisablePanel()
-    {
+    { 
         abilityInformationPanel.SetActive(false);
     }
 
