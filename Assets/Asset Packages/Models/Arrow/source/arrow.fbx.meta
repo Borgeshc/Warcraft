@@ -1,0 +1,139 @@
+fileFormatVersion: 2
+guid: ed9ff14344ea8864fa19a9331a18f8dd
+timeCreated: 1519347918
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: arrow_shaft
+    100004: arrowhead
+    100006: arrowhead_tie
+    100008: arrowhead_tie1
+    100010: arrowhead_tie2
+    100012: arrowtail_1
+    100014: arrowtail_2
+    100016: arrowtail_3
+    100018: arrowtail_4
+    400000: //RootNode
+    400002: arrow_shaft
+    400004: arrowhead
+    400006: arrowhead_tie
+    400008: arrowhead_tie1
+    400010: arrowhead_tie2
+    400012: arrowtail_1
+    400014: arrowtail_2
+    400016: arrowtail_3
+    400018: arrowtail_4
+    2100000: wood_texture1
+    2100002: flint_texture
+    2100004: cord
+    2100006: feather_t
+    2300000: arrow_shaft
+    2300002: arrowhead
+    2300004: arrowhead_tie
+    2300006: arrowhead_tie1
+    2300008: arrowhead_tie2
+    2300010: arrowtail_1
+    2300012: arrowtail_2
+    2300014: arrowtail_3
+    2300016: arrowtail_4
+    3300000: arrow_shaft
+    3300002: arrowhead
+    3300004: arrowhead_tie
+    3300006: arrowhead_tie1
+    3300008: arrowhead_tie2
+    3300010: arrowtail_1
+    3300012: arrowtail_2
+    3300014: arrowtail_3
+    3300016: arrowtail_4
+    4300000: arrow_shaft
+    4300002: arrowhead
+    4300004: arrowhead_tie
+    4300006: arrowtail_1
+    4300008: arrowhead_tie1
+    4300010: arrowhead_tie2
+    4300012: arrowtail_2
+    4300014: arrowtail_3
+    4300016: arrowtail_4
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -19,6 +19,8 @@ public class Ability : MonoBehaviour
     public bool requiresTarget;
     public bool abilityUnlocked;
 
+    public Animator anim;
+
     public enum Enchant
     {
         None,

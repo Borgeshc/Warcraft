@@ -28,6 +28,7 @@ public class ProjectileAbility : Ability
 
         if(!OnGlobalCooldown() && !OnCooldown())
         {
+            anim.SetTrigger("Fire");
             StartCoroutine(Fire());
         }
     }

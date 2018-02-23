@@ -134,14 +134,21 @@ public class Target : MonoBehaviour
 
     public List<GameObject> GrabTargets(int numberOfTargets)
     {
-        List<GameObject> targetsToGrab = new List<GameObject>();
-        for(int i = 0; i < numberOfTargets - 1; i++)
+        if(nearByTargets.Count < numberOfTargets)
         {
-            if(nearByTargets[i] != null)
-                targetsToGrab.Add(nearByTargets[i]);
+            return nearByTargets;
         }
+        else
+        {
+            List<GameObject> targetsToGrab = new List<GameObject>();
+            for (int i = 0; i < numberOfTargets - 1; i++)
+            {
+                if (nearByTargets[i] != null)
+                    targetsToGrab.Add(nearByTargets[i]);
+            }
 
-        return targetsToGrab;
+            return targetsToGrab;
+        }
     }
 }
 
