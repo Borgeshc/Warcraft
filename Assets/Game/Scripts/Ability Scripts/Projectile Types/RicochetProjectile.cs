@@ -28,8 +28,10 @@ public class RicochetProjectile : Projectile
 
         smoothTime += speed * Time.deltaTime;
 
-        if(target != null)
+        if (target)
             transform.position = Vector3.Lerp(transform.position, target.transform.position, smoothTime);
+        else
+            Destroy(gameObject);
 
         if(target)
             distFromTarget = Vector3.Distance(transform.position, target.transform.position);
@@ -56,8 +58,10 @@ public class RicochetProjectile : Projectile
             else
             {
                 nearbyTargetIndex = 0;
-                if(Target.nearByTargets[nearbyTargetIndex])
+                if (Target.nearByTargets.Count > 0 && Target.nearByTargets[nearbyTargetIndex])
                     target = Target.nearByTargets[nearbyTargetIndex].transform;
+                else
+                    Destroy(gameObject);
             }
             return;
         }

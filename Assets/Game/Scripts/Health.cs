@@ -12,10 +12,15 @@ public class Health : MonoBehaviour
 
     [HideInInspector]
     public int health;
-    bool isDead;
+
+    [HideInInspector]
+    public bool isDead;
+
+    Animator anim;
 
     private void Awake()
     {
+        anim = GetComponentInChildren<Animator>();
         ResetHealth();
     }
 
@@ -44,8 +49,9 @@ public class Health : MonoBehaviour
         if(health <= 0 && !isDead)
         {
             isDead = true;
+            anim.SetBool("Dead", true);
             enemyNamePlate.DisableNamePlate();
-            Destroy(gameObject);
+            Destroy(gameObject, 5);
         }
     }
 
