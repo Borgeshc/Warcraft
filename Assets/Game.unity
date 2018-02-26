@@ -5699,6 +5699,7 @@ GameObject:
   - component: {fileID: 465248121}
   - component: {fileID: 465248113}
   - component: {fileID: 465248122}
+  - component: {fileID: 465248123}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5733,7 +5734,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 3
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!33 &465248115
@@ -5772,6 +5773,12 @@ MonoBehaviour:
   rotationSpeed: 200
   rotationAdjustSpeed: 10
   animationSmoothing: 10
+  jumpForce: 0.35
+  gravity: 1
+  distToGround: 1.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &465248118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5849,6 +5856,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c466c3cf6f435a447ba5bdd99bfb4748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!143 &465248123
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 465248112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &474524549
 Prefab:
   m_ObjectHideFlags: 0
