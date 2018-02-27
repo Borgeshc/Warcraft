@@ -63,6 +63,9 @@ public class RicochetProjectile : Projectile
                 else
                     Destroy(gameObject);
             }
+
+            if (ricochetCounter >= 5)
+                Destroy(gameObject);
             return;
         }
     }

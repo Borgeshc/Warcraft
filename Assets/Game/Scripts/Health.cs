@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public GameObject enemyCanvas;
     public GameObject combatText;
     public GameObject criticalCombatText;
+    public Collider damageCollider;
 
     [HideInInspector]
     public int health;
@@ -17,10 +18,12 @@ public class Health : MonoBehaviour
     public bool isDead;
 
     Animator anim;
+    SpawnManager spawnManager;
 
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
+        spawnManager = GameObject.Find("GameManager").GetComponent<SpawnManager>();
         ResetHealth();
     }
 
@@ -50,6 +53,13 @@ public class Health : MonoBehaviour
         {
             isDead = true;
             anim.SetBool("Dead", true);
+
+            if (damageCollider)
+                damageCollider.enabled = false;
+
+            if(spawnManager.activeEnemies.Contains(gameObject))
+                spawnManager.CheckStage(gameObject);
+
             enemyNamePlate.DisableNamePlate();
             Destroy(gameObject, 5);
         }

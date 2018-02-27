@@ -9,6 +9,7 @@ public class Minotaur : MonoBehaviour
     public float rotationSpeed = 100f;
     public float timeBeforeReady = 1.5f;
     public float timeBeforeCharge = 1f;
+    public Collider myCollider;
 
     GameObject player;
     Animator anim;
@@ -53,6 +54,9 @@ public class Minotaur : MonoBehaviour
 
         yield return new WaitForSeconds(timeBeforeCharge);
 
+        if (myCollider.enabled == false)
+            myCollider.enabled = true;
+
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, wallMask))
         {
@@ -77,5 +81,13 @@ public class Minotaur : MonoBehaviour
         if (Vector3.Distance(transform.position, hit) <= 5)
             return true;
         else return false;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag.Equals("Player"))
+        {
+            other.GetComponent<PlayerHealth>().Killed();
+        }
     }
 }

@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class EnemyManager : EntityManager
 {
-    public NamePlate enemyNamePlate;
     Health health;
     Entity entity;
+    ReferenceManager referenceManager;
+    NamePlate enemyNamePlate;
 
     private void Start()
     {
         health = GetComponent<Health>();
         entity = GetComponent<Entity>();
+
+        referenceManager = GameObject.Find("GameManager").GetComponent<ReferenceManager>();
+        enemyNamePlate = referenceManager.enemyNamePlate;
+
         enemyNamePlate.SetUpBaseValues(health.health, entity.stats.resource); //Resource needs to be changed with real resource value
         enemyNamePlate.SetUpNamePlate(entity.entityName, entity.entityImage, entity.stats.level, entity.stats.health, entity.stats.resource);
     }
