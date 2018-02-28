@@ -114,8 +114,6 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && Grounded())
             Jump();
 
-        print(Grounded());
-
         if (vertical > 0)
             transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z), rotationAdjustSpeed * Time.fixedDeltaTime);
     }

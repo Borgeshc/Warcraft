@@ -60,7 +60,6 @@ public class Minotaur : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, wallMask))
         {
-            print("Moving");
             anim.SetBool("Move", true);
             anim.SetBool("Attack", true);
 
@@ -77,7 +76,6 @@ public class Minotaur : MonoBehaviour
 
     bool CheckDistance(Vector3 hit)
     {
-        print("Waiting");
         if (Vector3.Distance(transform.position, hit) <= 5)
             return true;
         else return false;

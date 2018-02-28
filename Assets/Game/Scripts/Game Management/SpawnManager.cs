@@ -54,7 +54,7 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < stages[currentStage].enemies.Count; i++)
         {
-           GameObject enemy = Instantiate(stages[currentStage].enemies[i], spawnPositions[stages[currentStage].spawnPositions[i]].position, Quaternion.Euler(0,180,0));
+           GameObject enemy = Instantiate(stages[currentStage].enemies[i], spawnPositions[stages[currentStage].spawnPositions[i]].position, spawnPositions[stages[currentStage].spawnPositions[i]].rotation);
             activeEnemies.Add(enemy);
         }
 
